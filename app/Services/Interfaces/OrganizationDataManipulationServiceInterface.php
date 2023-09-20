@@ -7,4 +7,6 @@ interface OrganizationDataManipulationServiceInterface
     public function getXmlFileUrl(): string;
     public function convertXmlToJson(string $content): string;
     public function getXmlFileName(): string;
+
+    public function convertLocalXmltoJson(): string;
 }

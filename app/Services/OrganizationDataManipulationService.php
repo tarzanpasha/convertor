@@ -69,4 +69,10 @@ class OrganizationDataManipulationService implements OrganizationDataManipulatio
         return self::XML_FILE_NAME;
     }
 
+    public function convertLocalXmltoJson(): string
+    {
+        $content = Storage::disk('public')->get($this->getXmlFileName());
+        return $this->convertXmlToJson($content);
+    }
+
 }
