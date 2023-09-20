@@ -49,13 +49,12 @@ class OrganizationController extends Controller
         if (!$request->hasFile('xml')) {
             return response()->json([
                 'error' => 'Не задан xml файл для обработки'
-            ]);
+            ], 400);
         }
-
         return response()->json([
             'error' => false,
             'json' => $this->dataManipulationService->convertXmlToJson($request->file('xml')->getContent())
-        ]);
+        ], 200);
     }
 
 }

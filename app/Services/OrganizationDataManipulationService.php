@@ -61,7 +61,7 @@ class OrganizationDataManipulationService implements OrganizationDataManipulatio
                 $item->address->street;
             $jsonResult[$ogrn] = $companyString;
         }
-        return json_encode($jsonResult);
+        return json_encode($jsonResult, JSON_UNESCAPED_UNICODE);
     }
 
     public function getXmlFileName(): string
