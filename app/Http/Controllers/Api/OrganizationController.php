@@ -31,7 +31,7 @@ class OrganizationController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'error' => 'Неправильно задано количество записей для формирования xml'
-            ]);
+            ], 400);
         }
 
         $qty = (int)$validator->validated()['qty'];
@@ -41,7 +41,7 @@ class OrganizationController extends Controller
         return response()->json([
             'error' => false,
             'url' => $this->dataManipulationService->getXmlFileUrl(),
-        ]);
+        ], 200);
     }
 
     public function convertXmlToJson(Request $request): JsonResponse
