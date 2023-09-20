@@ -44,7 +44,7 @@ class OrganizationController extends Controller
         ]);
     }
 
-    public function convertXmlToJson(Request $request)
+    public function convertXmlToJson(Request $request): JsonResponse
     {
         if (!$request->hasFile('xml')) {
             return response()->json([
