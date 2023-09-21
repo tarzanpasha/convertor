@@ -38,3 +38,5 @@ convertor.postman_collection.json
 
 docker compose exec app php artisan app:convert-xml-to-json-command
 docker compose exec app php artisan app:create-xml-file-command
+
+В корне лежит коллекция для запуска api через Postman
